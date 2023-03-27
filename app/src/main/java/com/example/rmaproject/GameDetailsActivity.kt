@@ -1,10 +1,13 @@
 package com.example.rmaproject
 
 import android.annotation.SuppressLint
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +27,7 @@ class GameDetailsActivity : AppCompatActivity() {
     private lateinit var publisher: TextView
     private lateinit var genre: TextView
     private lateinit var description: TextView
+    private lateinit var homeButton : Button
 
     private lateinit var users: RecyclerView
     private lateinit var gameReviewRatingAdapter: GameReviewRatingAdapter
@@ -57,6 +61,11 @@ class GameDetailsActivity : AppCompatActivity() {
         gameReviewRatingAdapter = GameReviewRatingAdapter(listOf())
         users.adapter = gameReviewRatingAdapter
         gameReviewRatingAdapter.updateUsers(sortedList)
+
+        homeButton = findViewById(R.id.home_button)
+        homeButton.setOnClickListener(){
+            homeButton()
+        }
     }
 
     private fun populateDetails(){
@@ -73,6 +82,16 @@ class GameDetailsActivity : AppCompatActivity() {
         publisher.text = game.publisher
         genre.text = game.genre
         description.text = game.description
+    }
+
+    private fun homeButton(){
+        val homeIntent = Intent(this, HomeActivity::class.java)
+        try {
+            homeIntent.putExtra("gameTitle", game.title)
+            startActivity(homeIntent)
+        }catch(e: ActivityNotFoundException){
+            finish()
+        }
     }
 
 }

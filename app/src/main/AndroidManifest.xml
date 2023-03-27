@@ -12,6 +12,9 @@
         android:theme="@style/Theme.RMAProject"
         tools:targetApi="31">
         <activity
+            android:name=".GameDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>

@@ -29,10 +29,12 @@
 
         <RatingBar
             android:id="@+id/rating_bar"
-            android:layout_width="247dp"
-            android:layout_height="59dp"
+            android:layout_width="242dp"
+            android:layout_height="60dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:isIndicator="true"
+            android:numStars="5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

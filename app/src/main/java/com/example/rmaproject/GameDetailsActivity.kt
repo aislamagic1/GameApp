@@ -28,6 +28,8 @@ class GameDetailsActivity : AppCompatActivity() {
     private lateinit var genre: TextView
     private lateinit var description: TextView
     private lateinit var homeButton : Button
+    private lateinit var logoImage : ImageView
+    private lateinit var detailsButton: Button
 
     private lateinit var users: RecyclerView
     private lateinit var gameReviewRatingAdapter: GameReviewRatingAdapter
@@ -46,6 +48,7 @@ class GameDetailsActivity : AppCompatActivity() {
         publisher = findViewById(R.id.publisher_textview)
         genre = findViewById(R.id.genre_textview)
         description = findViewById(R.id.description_textview)
+        logoImage = findViewById(R.id.logo_image)
         val extras =intent.extras
         if(extras != null){
             game = getDetails(extras.getString("game_title_textview", ""))
@@ -62,6 +65,9 @@ class GameDetailsActivity : AppCompatActivity() {
         users.adapter = gameReviewRatingAdapter
         gameReviewRatingAdapter.updateUsers(sortedList)
 
+        detailsButton = findViewById(R.id.details_button)
+        detailsButton.isEnabled = false
+        detailsButton.isClickable = false
         homeButton = findViewById(R.id.home_button)
         homeButton.setOnClickListener(){
             homeButton()
@@ -74,6 +80,9 @@ class GameDetailsActivity : AppCompatActivity() {
         var id: Int =context.resources.getIdentifier(game.coverImage, "drawable", context.packageName)
         if(id == 0) id = context.resources.getIdentifier("picture1", "drawable", context.packageName)
         coverImage.setImageResource(id)
+        val context2: Context = logoImage.context
+        id = context2.resources.getIdentifier("game_logo", "drawable", context2.packageName)
+        logoImage.setImageResource(id)
         platform.text = game.platform
         releaseDate.text = game.releaseDate
         esrbRating.text = game.esrbRating

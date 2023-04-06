@@ -60,7 +60,7 @@ class GameDetailsActivity : AppCompatActivity() {
         val sortedList = userList.sortedBy { it.timestamp }.reversed()
         users = findViewById(R.id.user_list)
         users.setHasFixedSize(true)
-        users.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        users.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         gameReviewRatingAdapter = GameReviewRatingAdapter(listOf())
         users.adapter = gameReviewRatingAdapter
         gameReviewRatingAdapter.updateUsers(sortedList)
@@ -68,6 +68,7 @@ class GameDetailsActivity : AppCompatActivity() {
         detailsButton = findViewById(R.id.details_button)
         detailsButton.isEnabled = false
         detailsButton.isClickable = false
+        detailsButton.alpha = 0.5f
         homeButton = findViewById(R.id.home_button)
         homeButton.setOnClickListener(){
             homeButton()
@@ -91,6 +92,16 @@ class GameDetailsActivity : AppCompatActivity() {
         publisher.text = game.publisher
         genre.text = game.genre
         description.text = game.description
+    }
+
+    override fun onBackPressed() {
+        val homeIntent = Intent(this, HomeActivity::class.java)
+        try {
+            homeIntent.putExtra("gameTitle", game.title)
+            startActivity(homeIntent)
+        }catch(e: ActivityNotFoundException){
+            finish()
+        }
     }
 
     private fun homeButton(){

@@ -5,11 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 class GameReviewRatingAdapter(
     private var users: List<UserImpression>
     ): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

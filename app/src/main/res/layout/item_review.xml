@@ -1,15 +1,17 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_review_cv"
     android:layout_width="match_parent"
-    android:layout_height="172dp"
+    android:layout_height="wrap_content"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="#9CB2CE"
     app:cardCornerRadius="8dp"
     app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/username_textview"
@@ -20,6 +22,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="153dp"
             android:text="TextView"
+            android:textColor="#29487D"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -30,16 +33,17 @@
         <TextView
             android:id="@+id/review_textview"
             android:layout_width="0dp"
-            android:layout_height="19dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="TextView"
+            android:textColor="#29487D"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username_textview"
-            app:layout_constraintVertical_bias="0.19" />
+            app:layout_constraintVertical_bias="0.082" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

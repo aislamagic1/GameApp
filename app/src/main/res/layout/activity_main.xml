@@ -10,9 +10,9 @@
         android:id="@+id/linear_layout_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical"
+        android:background="#D6DDF8"
         app:layout_constraintBottom_toTopOf="@id/game_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -44,6 +44,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="#3C5898"
                 android:text="Home" />
 
             <Space
@@ -56,6 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="#3C5898"
                 android:text="Details" />
 
         </LinearLayout>
@@ -79,8 +83,8 @@
             <Button
                 android:id="@+id/search_button"
                 android:layout_width="34dp"
-                android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@android:drawable/ic_menu_search" />

@@ -2,6 +2,7 @@ package com.example.rmaproject
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -31,6 +32,7 @@ class HomeActivity : AppCompatActivity() {
         gamesAdapter.updateGames(gamesList)
 
         detailsButton = findViewById(R.id.details_button)
+        detailsButton.alpha = 1f
         detailsButton.setOnClickListener(){
             val gameTitle = intent.getStringExtra("gameTitle")
             val findGame = gamesList.find() {game -> gameTitle.equals(game.title)}
@@ -38,12 +40,14 @@ class HomeActivity : AppCompatActivity() {
             else{
                 detailsButton.isEnabled = false
                 detailsButton.isClickable = false
+                detailsButton.alpha = 0.5f
             }
         }
 
         homeButton = findViewById(R.id.home_button)
         homeButton.isEnabled = false
         homeButton.isClickable = false
+        homeButton.alpha = 0.5f
 
         logoImage = findViewById(R.id.logo_image)
         val context: Context = logoImage.context

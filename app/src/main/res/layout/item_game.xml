@@ -4,6 +4,7 @@
     android:layout_height="172dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="#9CB2CE"
     app:cardCornerRadius="8dp"
     app:cardElevation="8dp">
 
@@ -23,6 +24,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:gravity="center"
+                android:textColor="#29487D"
+                android:textSize="15sp"
                 android:layout_weight="1"
                 android:text="TextView" />
         </LinearLayout>
@@ -36,20 +39,27 @@
             <TextView
                 android:id="@+id/game_title_textview"
                 android:layout_width="match_parent"
-                android:layout_height="38dp"
+                android:layout_height="65dp"
                 android:gravity="center_horizontal"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#29487D"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/release_date"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
+                android:textColor="#29487D"
+                android:textSize="15sp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/game_platform_textview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textColor="#29487D"
+                android:textSize="15sp"
                 android:text="TextView" />
         </LinearLayout>
 

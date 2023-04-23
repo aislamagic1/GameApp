@@ -37,7 +37,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/game_title_textview"
+                android:id="@+id/item_title_textview"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
                 android:gravity="center_horizontal"
@@ -48,19 +48,19 @@
 
             <TextView
                 android:id="@+id/release_date"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="51dp"
+                android:text="TextView"
                 android:textColor="#29487D"
-                android:textSize="15sp"
-                android:text="TextView" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/game_platform_textview"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:text="TextView"
                 android:textColor="#29487D"
-                android:textSize="15sp"
-                android:text="TextView" />
+                android:textSize="15sp" />
         </LinearLayout>
 
     </LinearLayout>

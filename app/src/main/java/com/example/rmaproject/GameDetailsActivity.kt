@@ -1,20 +1,16 @@
 package com.example.rmaproject
 
-import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rmaproject.GameData.Companion.getAll
 import com.example.rmaproject.GameData.Companion.getDetails
-import org.w3c.dom.Text
 
 class GameDetailsActivity : AppCompatActivity() {
     private lateinit var game: Game
@@ -39,7 +35,7 @@ class GameDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_details)
 
-        title = findViewById(R.id.game_title_textview)
+        title = findViewById(R.id.item_title_textview)
         coverImage = findViewById(R.id.cover_imageview)
         platform = findViewById(R.id.platform_textview)
         releaseDate = findViewById(R.id.release_date_textview)

@@ -5,7 +5,7 @@ class GameData {
         fun getAll(): List<Game>{
             return listOf(Game("Hollow Knight", "PC/PlayStation/XBox/Nintendo Switch", "24.2.2017",
             90.0, "hollow_knight", "E10+", "Team Cherry", "Team Cherry",
-            "metroidvania", "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style."
+            "Metroidvania", "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style."
             , listOf(UserRating("mossbag", 1, 5.0), UserReview("IndigoWendigo", 2, "Full of bugs. 10/10"), UserRating("GreySteel", 5, 4.0),
                 UserReview("I_Am_Maty", 9, "It is ok no other game made me rage quit in the first 40 minutes." +
                         "But it is a actually good game."), UserReview("Aza", 6, "What can I say that has not already been said about this Overwhelmingly Positive experience. Just get the game already.")))

@@ -8,7 +8,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_left"
-        android:name="com.example.rmaproject.HomeFragment"
+        android:name="com.example.projekat.HomeFragment"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_right"
-        android:name="com.example.rmaproject.GameDetailsFragment"
+        android:name="com.example.projekat.GameDetailsFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

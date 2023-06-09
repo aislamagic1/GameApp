@@ -1,4 +1,4 @@
-package com.example.rmaproject
+package com.example.projekat
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -10,7 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rmaproject.GameData.Companion.getDetails
+import ba.etf.rma23.projekat.R
+import com.example.projekat.GameData.Companion.getDetails
+import ba.etf.rma23.projekat.MainActivity
 
 class GameDetailsActivity : AppCompatActivity() {
     private lateinit var game: Game
@@ -91,7 +93,7 @@ class GameDetailsActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val homeIntent = Intent(this, HomeActivity::class.java)
+        val homeIntent = Intent(this, MainActivity::class.java)
         try {
             homeIntent.putExtra("gameTitle", game.title)
             startActivity(homeIntent)
@@ -101,7 +103,7 @@ class GameDetailsActivity : AppCompatActivity() {
     }
 
     private fun homeButton(){
-        val homeIntent = Intent(this, HomeActivity::class.java)
+        val homeIntent = Intent(this, MainActivity::class.java)
         try {
             homeIntent.putExtra("gameTitle", game.title)
             startActivity(homeIntent)

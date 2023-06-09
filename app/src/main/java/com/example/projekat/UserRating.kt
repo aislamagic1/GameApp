@@ -1,4 +1,4 @@
-package com.example.rmaproject
+package com.example.projekat
 
 data class UserRating(
     override val userName: String,

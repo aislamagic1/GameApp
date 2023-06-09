@@ -1,4 +1,4 @@
-package com.example.rmaproject
+package ba.etf.rma23.projekat
 
 import android.content.pm.ActivityInfo
 import android.view.View
@@ -15,7 +15,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import com.example.rmaproject.GameData.Companion.getAll
+import com.example.projekat.GameData.Companion.getAll
 import org.hamcrest.CoreMatchers
 import org.junit.Assert
 import org.junit.Rule
@@ -42,11 +42,11 @@ class OwnEspressoTests {
     }
 
     @get:Rule
-    var homeRule: ActivityScenarioRule<HomeActivity> =
-        ActivityScenarioRule(HomeActivity::class.java)
+    var homeRule: ActivityScenarioRule<MainActivity> =
+        ActivityScenarioRule(MainActivity::class.java)
 
     @get:Rule
-    val activityRule = ActivityTestRule(HomeActivity::class.java)
+    val activityRule = ActivityTestRule(MainActivity::class.java)
 
     /**
      * Testiranje Navigacije

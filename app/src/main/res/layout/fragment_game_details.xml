@@ -150,8 +150,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/user_list"
-            android:layout_width="0dp"
-            android:layout_height="278dp"
+            android:layout_width="301dp"
+            android:layout_height="201dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -160,6 +160,31 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/release_date_textview" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.578"
+            app:layout_constraintStart_toEndOf="@+id/user_list" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/delete_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@android:drawable/ic_delete"
+            app:layout_constraintBottom_toTopOf="@+id/add_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.578"
+            app:layout_constraintStart_toEndOf="@+id/user_list"
+            app:layout_constraintTop_toBottomOf="@+id/description_textview"
+            app:layout_constraintVertical_bias="0.907" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

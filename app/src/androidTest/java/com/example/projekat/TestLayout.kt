@@ -1,4 +1,4 @@
-package com.example.rmaproject
+package ba.etf.rma23.projekat
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +13,7 @@ import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.projekat.GameData
 import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.CoreMatchers.instanceOf
 import org.hamcrest.CoreMatchers.`is` as Is
@@ -39,7 +40,7 @@ class TestLayout {
     }
 
     @get:Rule
-    var homeRule:ActivityScenarioRule<HomeActivity> = ActivityScenarioRule(HomeActivity::class.java)
+    var homeRule:ActivityScenarioRule<MainActivity> = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     fun elementsTest(){

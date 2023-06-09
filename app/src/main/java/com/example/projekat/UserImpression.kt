@@ -1,4 +1,4 @@
-package com.example.rmaproject
+package com.example.projekat
 
 abstract class UserImpression(
     open val userName: String,

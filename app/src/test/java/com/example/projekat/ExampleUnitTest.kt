@@ -1,4 +1,4 @@
-package com.example.rmaproject
+package com.example.projekat
 
 import org.junit.Test
 

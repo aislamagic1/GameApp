@@ -1,10 +1,12 @@
-package com.example.rmaproject
+package com.example.projekat
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import ba.etf.rma23.projekat.R
 
 class GameListAdapter(
     private var games: List<Game>,
@@ -25,9 +27,14 @@ class GameListAdapter(
         holder.itemView.setOnClickListener{onItemClicked(games[position])}
     }
 
-    fun updateGames(games: List<Game>){
-        this.games = games
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateGames(newGames: List<Game>){
+        this.games = newGames
         notifyDataSetChanged()
+    }
+
+    fun getGames(): List<Game>{
+        return this.games
     }
 
     inner class GameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

@@ -6,14 +6,14 @@ class GameData {
             return listOf(Game(1,"Hollow Knight", "PC/PlayStation/XBox/Nintendo Switch", "24.2.2017",
             90.0, "hollow_knight", "E10+", "Team Cherry", "Team Cherry",
             "Metroidvania", "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style."
-            , listOf(UserRating("mossbag", 1, 5.0), UserReview("IndigoWendigo", 2, "Full of bugs. 10/10"), UserRating("GreySteel", 5, 4.0),
-                UserReview("I_Am_Maty", 9, "It is ok no other game made me rage quit in the first 40 minutes." +
-                        "But it is a actually good game."), UserReview("Aza", 6, "What can I say that has not already been said about this Overwhelmingly Positive experience. Just get the game already.")), gamePost = GamePost(0, "")
+            , listOf(UserRating("mossbag", "1", 5.0), UserReview("IndigoWendigo", "1", "Full of bugs. 10/10"), UserRating("GreySteel", "1", 4.0),
+                UserReview("I_Am_Maty", "1", "It is ok no other game made me rage quit in the first 40 minutes." +
+                        "But it is a actually good game."), UserReview("Aza", "1", "What can I say that has not already been said about this Overwhelmingly Positive experience. Just get the game already.")), gamePost = GamePost(0, "")
             )
             , Game(1,"Apex Legends", "PC/PlayStation/XBox/Nintendo Switch", "5.11.2020", 88.0, "apex_legends", "T", "Respawn Entertainment",
                 "EA Games", "Action", "Apex Legends is the award-winning, free-to-play Hero Shooter from Respawn Entertainment. Master an ever-growing roster of legendary characters with powerful abilities, and experience strategic squad play and innovative gameplay in the next evolution of Hero Shooter and Battle Royale.",
-                listOf(UserRating("Hekki", 1, 4.0), UserReview("Fleetfoot Hammerci", 2, "At least you don't have to build an apartment complex to win in Apex."), UserReview("Nebula", 5, "My biggest mistake in life was installing this video game"),
-                UserRating("Aldin", 3, 4.5), UserReview("Beetle", 7, "Tap-strafe your way into certain death as 60% of this player base relying on a cheeky little feature called aim assist.")), gamePost = GamePost(0, "")),
+                listOf(UserRating("Hekki", "1", 4.0), UserReview("Fleetfoot Hammerci", "1", "At least you don't have to build an apartment complex to win in Apex."), UserReview("Nebula", "1", "My biggest mistake in life was installing this video game"),
+                UserRating("Aldin", "1", 4.5), UserReview("Beetle", "1", "Tap-strafe your way into certain death as 60% of this player base relying on a cheeky little feature called aim assist.")), gamePost = GamePost(0, "")),
                 Game(1,"Elden Ring", "PC/PlayStation/XBox", "25.2.2022", 96.0, "elden_ring", "M+17",
                     "FromSoftware Inc.", "FromSoftware Inc.", "Souls-like", "THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
                     listOf(), gamePost =GamePost(0, "")), Game(1,"Dead Cells", "PC/PlayStation/XBox/Nintendo Switch", "6.8.2018", 89.0, "dead_cells",

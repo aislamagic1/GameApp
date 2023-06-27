@@ -50,4 +50,16 @@ interface Api {
         @Path("aid") api: String = AccountGamesRepository.apiKey,
         @Path("gid") id: Int
     ): Response<Game>
+
+    @POST("account/{aid}/game/{gid}/gamereview")
+    suspend fun sendReview(
+        @Path("aid") api: String = AccountGamesRepository.apiKey,
+        @Path("gid") id: Int,
+        @Body review:GameReview
+    ):Response<GameReview>
+
+    @GET("game/{gid}/gamereviews")
+    suspend fun getReviewsForGame(
+        @Path("gid") id: Int
+    ): Response<List<GameReview>>
 }

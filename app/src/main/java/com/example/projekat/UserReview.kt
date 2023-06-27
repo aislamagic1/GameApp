@@ -2,6 +2,6 @@ package com.example.projekat
 
 data class UserReview(
     override val userName: String,
-    override val timestamp: Long,
+    override val timestamp: String,
     val review: String
     ):UserImpression(userName, timestamp)

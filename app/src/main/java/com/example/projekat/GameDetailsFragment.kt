@@ -1,6 +1,7 @@
 package com.example.projekat
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +10,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ba.etf.rma23.projekat.R
 import ba.etf.rma23.projekat.data.repositories.AccountGamesRepository
 import com.bumptech.glide.Glide
 import com.example.projekat.GameData.Companion.getAll
+import com.example.projekat.data.repositories.AppDatabase
+import com.example.projekat.data.repositories.GameReview
+import com.example.projekat.data.repositories.GameReviewsRepository
 import com.example.projekat.data.repositories.GamesRepository
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.CoroutineScope
@@ -57,6 +62,12 @@ class GameDetailsFragment : Fragment() {
         addGame = view.findViewById(R.id.add_game)
         deletGame = view.findViewById(R.id.delete_game)
 
+        users = view.findViewById(R.id.user_list)
+        users.setHasFixedSize(true)
+        users.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        gameReviewRatingAdapter = GameReviewRatingAdapter(listOf())
+        users.adapter = gameReviewRatingAdapter
+
         if(arguments?.get("id") != null) {
 //            game = GameData.getDetails(arguments?.get("id") as Int)
 //            if(game.title != "Test"){
@@ -64,7 +75,9 @@ class GameDetailsFragment : Fragment() {
 //                populateDetails()
 //            }
 //            else{
-                getGameDetails(arguments?.get("id") as Int)
+            context?.let {
+                getGameDetails(arguments?.get("id") as Int, it)
+            }
 //            }
         }else{
             game = getAll().first()
@@ -80,12 +93,14 @@ class GameDetailsFragment : Fragment() {
         }
 
 //        val sortedList = userList.sortedBy { it.timestamp }.reversed()
+
+//        getReviews()
 //        users = view.findViewById(R.id.user_list)
 //        users.setHasFixedSize(true)
 //        users.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 //        gameReviewRatingAdapter = GameReviewRatingAdapter(listOf())
 //        users.adapter = gameReviewRatingAdapter
-//        gameReviewRatingAdapter.updateUsers(sortedList)
+//        gameReviewRatingAdapter.updateUsers(userList)
 
         return view
     }
@@ -115,6 +130,21 @@ class GameDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SuspiciousIndentation")
+    private fun getReviews(){
+        val scope = CoroutineScope(Job() + Dispatchers.Main)
+        var result: Game
+        scope.launch {
+            val userReviews = GameReviewsRepository.getReviewsForGame(game.id)
+            val userListMutable: MutableList<UserImpression> = emptyList<UserImpression>().toMutableList()
+            for(x in userReviews){
+                if(x.review == null)
+                userListMutable.add(UserRating(x.student!!,x.timestamp, x.rating!!.toDouble()))
+            }
+            userList = userListMutable
+        }
+    }
+
 
     private fun populateDetails(){
         title.text = game.title
@@ -135,15 +165,33 @@ class GameDetailsFragment : Fragment() {
         publisher.text = game.publisher
         genre.text = game.genre
         description.text = game.description
+
+//        gameReviewRatingAdapter.updateUsers(game.userImpressions)
     }
 
-    fun getGameDetails(id: Int){
+    fun getGameDetails(id: Int, context: Context){
         val scope = CoroutineScope(Job() + Dispatchers.Main)
         var result: Game
         scope.launch {
             result = GamesRepository.getGameById(Game(id,"","","",0.0,"","","","","","",listOf<UserImpression>())).first()
 
+//            userList = userListMutable
+
             game = result
+
+            val userReviews = GameReviewsRepository.getOfflineReviews(context)
+            val userListMutable: MutableList<UserImpression> = emptyList<UserImpression>().toMutableList()
+            for(x in userReviews){
+                if(x.review == null)
+                    userListMutable.add(UserRating(x.student!!,x.timestamp, x.rating!!.toDouble()))
+            }
+//
+            var db = AppDatabase.getInstance(context)
+            db.GameReviewDao().insertReview(GameReview(3, "nije dobro", 14593, false, "", ""))
+            game.userImpressions = userListMutable
+
+
+
             //AccountGamesRepository.saveGame(game)
             //AccountGamesRepository.removeGame(game.idOfGame!!)
             populateDetails()

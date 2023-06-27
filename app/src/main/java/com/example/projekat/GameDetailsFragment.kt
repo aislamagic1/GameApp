@@ -186,8 +186,8 @@ class GameDetailsFragment : Fragment() {
                     userListMutable.add(UserRating(x.student!!,x.timestamp, x.rating!!.toDouble()))
             }
 //
-            var db = AppDatabase.getInstance(context)
-            db.GameReviewDao().insertReview(GameReview(3, "nije dobro", 14593, false, "", ""))
+//            var db = AppDatabase.getInstance(context)
+//            db.GameReviewDao().insertReview(GameReview(3, "nije dobro", 14593, false, "", ""))
             game.userImpressions = userListMutable
 
 
